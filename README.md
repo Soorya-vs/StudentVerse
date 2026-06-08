@@ -6,7 +6,6 @@ StudentVerse is a full-stack web application developed to streamline communicati
 
 The platform provides a centralized space where students can join communities, receive important notices, participate in events, explore placement opportunities, and manage their profiles. Administrators can efficiently manage students, communities, notices, events, and placements through a dedicated admin dashboard.
 
----
 
 ## Features
 
@@ -37,7 +36,6 @@ The platform provides a centralized space where students can join communities, r
 * Admin Route Protection
 * Student Approval Verification
 
----
 
 ## Technology Stack
 
@@ -64,7 +62,6 @@ The platform provides a centralized space where students can join communities, r
 * GitHub
 * Render
   
----
 
 ## Key Functionalities
 
@@ -88,7 +85,6 @@ Placement opportunities can be posted with company details, eligibility criteria
 
 New registrations require administrator approval before platform access is granted.
 
----
 
 ## Challenges Faced
 
@@ -98,7 +94,6 @@ New registrations require administrator approval before platform access is grant
 * Designing responsive user interfaces
 * Deploying Flask application on Render
 
----
 
 ## Learning Outcomes
 
@@ -110,7 +105,6 @@ New registrations require administrator approval before platform access is grant
 * Git & GitHub Workflow
 * Cloud Deployment using Render
 
----
 
 ## Future Enhancements
 
@@ -121,7 +115,6 @@ New registrations require administrator approval before platform access is grant
 * Mobile Application Integration
 * PostgreSQL Database Migration
 
----
 
 ## Live Demo
 
@@ -131,7 +124,6 @@ https://studentverse-9eck.onrender.com/
 GitHub Repository:
 https://github.com/Soorya-vs/StudentVerse
 
----
 
 ## Author
 
