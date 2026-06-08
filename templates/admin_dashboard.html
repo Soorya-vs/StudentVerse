@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h1 class="admin-title">Admin Dashboard</h1>
+
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card admin-stat-card p-3 text-center">
+            <h5>Students</h5>
+            <h2>{{ students_count }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card admin-stat-card p-3 text-center">
+            <h4>Communities</h4>
+            <h2>{{ communities_count }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card admin-stat-card p-3 text-center">
+            <h5>Events</h5>
+            <h2>{{ events_count }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card admin-stat-card p-3 text-center">
+            <h5>Placements</h5>
+            <h2>{{ placements_count }}</h2>
+        </div>
+    </div>
+
+</div>
+
+<div class="admin-actions mb-4">
+
+    <a href="/manage-communities" class="btn admin-btn">
+        Manage Communities
+    </a>
+
+    <a href="/create-notice" class="btn admin-btn">
+        Create Notice
+    </a>
+
+    <a href="/notices" class="btn admin-btn">
+        View Notices
+    </a>
+
+    <a href="/create-event" class="btn admin-btn">
+        Create Event
+    </a>
+
+    <a href="/events" class="btn admin-btn">
+        View Events
+    </a>
+
+    <a href="/create-placement" class="btn admin-btn">
+        Create Placement
+    </a>
+
+    <a href="/placements" class="btn admin-btn">
+        View Placements
+    </a>
+
+    <a href="/admin/students" class="btn admin-btn">
+        Students
+    </a>
+
+</div>
+
+<h3 class="section-title-admin">Pending Student Approvals</h3>
+
+<table class="table admin-table">
+
+    <tr>
+        <th>Sl No</th>
+        <th>Name</th>
+        <th>Reg No</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+
+    {% for student in students %}
+
+    <tr>
+
+        <td>{{ loop.index }}</td>
+
+        <td>{{ student.name }}</td>
+
+        <td>{{ student.reg_no }}</td>
+
+        <td>{{ student.department }}</td>
+
+        <td>
+
+            <a href="/approve/{{ student.id }}"
+               class="btn btn-success">
+
+                Approve
+
+            </a>
+
+            <a href="/ignore/{{ student.id }}"
+               class="btn btn-danger">
+
+                Ignore
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

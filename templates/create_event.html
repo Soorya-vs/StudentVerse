@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h3 class="page-title">Create Event</h3>
+
+    <form method="POST">
+
+        <input type="text"
+               name="title"
+               class="form-control mb-3"
+               placeholder="Event Title">
+
+        <textarea
+                name="description"
+                class="form-control mb-3"
+                placeholder="Event Description">
+        </textarea>
+
+        <input type="date"
+               name="date"
+               class="form-control mb-3">
+
+        <input type="text"
+               name="organizer"
+               class="form-control mb-3"
+               placeholder="Organizer">
+
+        <select
+                name="category"
+                class="form-control mb-3">
+
+            <option value="">Select Category</option>
+
+            <option value="Technical">
+                Technical
+            </option>
+
+            <option value="Cultural">
+                Cultural
+            </option>
+
+            <option value="Sports">
+                Sports
+            </option>
+
+            <option value="Academic">
+                Academic
+            </option>
+
+            <option value="Workshop">
+                Workshop
+            </option>
+
+            <option value="Seminar">
+                Seminar
+            </option>
+
+        </select>
+
+        <input type="url"
+               name="link"
+               class="form-control mb-3"
+               placeholder="Registration / Event Link (Optional)">
+
+        <button class="btn btn-success">
+
+            Create Event
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

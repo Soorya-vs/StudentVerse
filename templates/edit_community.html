@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Edit Community</h1>
+
+<form method="POST">
+
+    <input type="text"
+           name="name"
+           value="{{ community.name }}"
+           class="form-control">
+
+    <br>
+
+    <input type="text"
+           name="category"
+           value="{{ community.category }}"
+           class="form-control">
+
+    <br>
+
+    <textarea name="description"
+              class="form-control">{{ community.description }}</textarea>
+
+    <br>
+
+    <button class="btn btn-success">
+
+        Save Changes
+
+    </button>
+
+</form>
+
+{% endblock %}

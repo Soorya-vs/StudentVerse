@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h3 class="page-title">Placements</h3>
+
+{% for placement in placements %}
+
+<div class="card dashboard-card text-center p-4">
+
+    <h4>{{ placement.company }}</h4>
+
+    <p>
+        <strong>Role:</strong>
+        {{ placement.role }}
+    </p>
+
+    <p>
+        <strong>Package:</strong>
+        {{ placement.package }}
+    </p>
+
+    <p>
+        <strong>Deadline:</strong>
+        {{ placement.deadline }}
+    </p>
+
+    <p>
+         <strong>Eligibility:</strong>
+        {{ placement.eligibility }}
+    </p>
+
+    <p>
+        {{ placement.description }}
+    </p>
+
+    {% if placement.link %}
+
+    <a href="{{ placement.link }}"
+       target="_blank"
+       class="btn btn-primary">
+
+       Apply Now
+
+    </a>
+
+    {% endif %}
+
+    <hr>
+
+    {% if session.get("role") == "admin" %}
+
+<hr>
+
+<a href="/edit-placement/{{ placement.id }}"
+   class="btn btn-warning">
+
+   Edit
+
+</a>
+
+<a href="/delete-placement/{{ placement.id }}"
+   class="btn btn-danger">
+
+   Delete
+
+</a>
+
+{% endif %}
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

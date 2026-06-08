@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1 class="sv-title">
+        My Communities
+    </h1>
+
+    <div class="row">
+
+        {% for community in communities %}
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card community-card p-4">
+
+                <div class="text-center mb-3">
+
+                    {% if community.image %}
+
+                    <img src="{{ url_for(
+                        'static',
+                        filename='uploads/community_logos/' + community.image
+                    ) }}"
+                    class="community-logo">
+
+                    {% endif %}
+
+                </div>
+
+                <h4 class="text-center">
+                    {{ community.name }}
+                </h4>
+
+                <p>
+                    {{ community.description }}
+                </p>
+
+                <div class="mt-auto">
+
+                    <a href="/community/{{ community.id }}"
+                       class="btn btn-primary w-100">
+
+                        Open Community
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

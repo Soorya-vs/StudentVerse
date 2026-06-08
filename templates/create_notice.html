@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h3 class="page-title">Create Notice</h3>
+
+<form method="POST"
+      enctype="multipart/form-data">
+
+    <div class="mb-3">
+
+        <label>Image (Optional)</label>
+
+        <input type="file"
+               name="image"
+               class="form-control">
+
+    </div>
+
+    <input type="text"
+           name="title"
+           class="form-control mb-3"
+           placeholder="Notice Title">
+
+    <textarea
+        name="content"
+        class="form-control mb-3"
+        placeholder="Notice Content">
+    </textarea>
+
+    <div class="mb-3">
+
+        <label>External Link (Optional)</label>
+
+        <input type="url"
+               name="link"
+               class="form-control"
+               placeholder="https://example.com">
+
+    </div>
+
+    <select
+            name="community_id"
+            class="form-control mb-3">
+
+        {% for c in communities %}
+
+        <option value="{{ c.id }}">
+            {{ c.name }}
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+    <button class="btn btn-success">
+
+        Create Notice
+
+    </button>
+
+</form>
+
+</div>
+
+{% endblock %}

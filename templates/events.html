@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h3 class="page-title">Events</h3>
+
+    {% for event in events %}
+
+    <div class="card p-4 mb-3 shadow">
+
+        <h4>{{ event.title }}</h4>
+
+        <p>{{ event.description }}</p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ event.date }}
+        </p>
+
+        <p>
+            <strong>Organizer:</strong>
+            {{ event.organizer }}
+        </p>
+
+        <p>
+            <strong>Category:</strong>
+            {{ event.category }}
+        </p>
+
+        {% if event.link %}
+
+        <a href="{{ event.link }}"
+           target="_blank"
+           class="btn btn-primary">
+
+            Open Event Link
+
+        </a>
+
+        {% endif %}
+
+        {% if session.get("role") == "admin" %}
+
+        <hr>
+
+        <a href="/edit-event/{{ event.id }}"
+           class="btn btn-warning">
+
+            Edit
+
+        </a>
+
+        <a href="/delete-event/{{ event.id }}"
+           class="btn btn-danger">
+
+            Delete
+
+        </a>
+
+        {% endif %}
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

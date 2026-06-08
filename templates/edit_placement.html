@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Edit Placement</h1>
+
+    <form method="POST">
+
+        <input type="text"
+               name="company"
+               value="{{ placement.company }}"
+               class="form-control mb-3"
+               placeholder="Company Name">
+
+        <input type="text"
+               name="role"
+               value="{{ placement.role }}"
+               class="form-control mb-3"
+               placeholder="Job Role">
+
+        <input type="text"
+               name="package"
+               value="{{ placement.package }}"
+               class="form-control mb-3"
+               placeholder="Package">
+
+        <input type="text"
+               name="deadline"
+               value="{{ placement.deadline }}"
+               class="form-control mb-3"
+               placeholder="Application Deadline">
+
+        <input type="url"
+               name="link"
+               value="{{ placement.link }}"
+               class="form-control mb-3"
+               placeholder="Apply Link">
+
+        <textarea
+                name="description"
+                class="form-control mb-3"
+                placeholder="Job Description">{{ placement.description }}</textarea>
+
+        <button class="btn btn-success">
+
+            Save Changes
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

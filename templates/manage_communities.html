@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3 class="page-title">Manage Communities</h3>
+
+<a href="/create-community"
+   class="btn btn-success mb-3">
+
+   Add Community
+
+</a>
+
+<table class="table">
+
+<tr>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Action</th>
+</tr>
+
+{% for community in communities %}
+
+<tr>
+
+    <td>{{ community.name }}</td>
+
+    <td>{{ community.category }}</td>
+
+    <td>
+
+    <a href="/edit-community/{{ community.id }}"
+       class="btn btn-warning">
+
+        Edit
+
+    </a>
+
+    <a href="/community-members/{{ community.id }}"
+       class="btn btn-info">
+
+        Members
+
+    </a>
+
+    <a href="/delete-community/{{ community.id }}"
+       class="btn btn-danger">
+
+        Delete
+
+    </a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

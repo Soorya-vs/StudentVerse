@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5 community-page">
+
+    <div class="community-header">
+
+        {% if community.image %}
+
+        <img src="{{ url_for(
+            'static',
+            filename='uploads/community_logos/' + community.image
+        ) }}"
+        class="community-logo mb-3">
+
+        {% endif %}
+
+        <h1 class="community-title">
+            {{ community.name }}
+        </h1>
+
+        <p class="community-description">
+            {{ community.description }}
+        </p>
+
+        <h5 class="community-members">
+            👥 Members: {{ members|length }}
+        </h5>
+
+        <div class="mt-4">
+
+            <a href="/community/{{ community.id }}/updates"
+               class="btn btn-warning px-4">
+
+                View Updates
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

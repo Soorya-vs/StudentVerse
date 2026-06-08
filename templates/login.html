@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="login-tile">
+    <h1>Student Login</h1>
+        </div>
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Register Number</label>
+            <input type="text"
+                   name="reg_no"
+                   class="form-control"
+                   placeholder="Enter Register Number"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Enter Password"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Login
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

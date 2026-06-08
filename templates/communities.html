@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="sv-title mb-4">
+    Campus Communities
+</h1>
+
+<!-- Technical Clubs -->
+<h2 class="sv-section-title">💻 Technical Clubs</h2>
+
+<div class="row mb-5">
+
+{% for community in communities %}
+{% if community.category == "Technical" %}
+
+<div class="col-md-4 mb-4">
+
+    <div class="card community-card p-4">
+
+        <h4>{{ community.name }}</h4>
+
+        <p>{{ community.description }}</p>
+
+        <div class="mt-auto">
+
+            <a href="/join/{{ community.id }}"
+               class="btn btn-success w-100">
+                Join Community
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+
+<!-- Arts Clubs -->
+<h2 class="sv-section-title">🎭 Arts Clubs</h2>
+
+<div class="row mb-5">
+
+{% for community in communities %}
+{% if community.category == "Arts" %}
+
+<div class="col-md-4 mb-4">
+
+    <div class="card community-card p-4">
+
+        <h4>{{ community.name }}</h4>
+
+        <p>{{ community.description }}</p>
+
+        <div class="mt-auto">
+
+            <a href="/join/{{ community.id }}"
+               class="btn btn-success w-100">
+                Join Community
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+
+<!-- Sports Clubs -->
+<h2 class="sv-section-title">⚽ Sports Clubs</h2>
+
+<div class="row mb-5">
+
+{% for community in communities %}
+{% if community.category == "Sports" %}
+
+<div class="col-md-4 mb-4">
+
+    <div class="card community-card p-4">
+
+        <h4>{{ community.name }}</h4>
+
+        <p>{{ community.description }}</p>
+
+        <div class="d-grid gap-2 mt-auto">
+
+            <a href="/join/{{ community.id }}"
+               class="btn btn-success">
+                Join Community
+            </a>
+
+            <a href="/community/{{ community.id }}"
+               class="btn btn-primary">
+                Open Community
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+
+<!-- Social Clubs -->
+<h2 class="sv-section-title">🤝 Social Clubs</h2>
+
+<div class="row mb-5">
+
+{% for community in communities %}
+{% if community.category == "Social" %}
+
+<div class="col-md-4 mb-4">
+
+    <div class="card community-card p-4">
+
+        <h4>{{ community.name }}</h4>
+
+        <p>{{ community.description }}</p>
+
+        <div class="mt-auto">
+
+            <a href="/join/{{ community.id }}"
+               class="btn btn-success w-100">
+                Join Community
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="status-card">
+
+        <div class="status-icon">
+            ❌
+        </div>
+
+        <h1 class="status-title">
+            Admin Login Failed
+        </h1>
+
+        <p class="status-message">
+
+            Invalid Admin Register Number or Password.
+
+            <br><br>
+
+            Please verify your credentials and try again.
+
+        </p>
+
+        <a href="/admin-login"
+           class="btn btn-warning">
+
+            Back to Admin Login
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

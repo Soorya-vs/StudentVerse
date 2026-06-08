@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="page-title">Create Community</h1>
+
+<form method="POST"
+      enctype="multipart/form-data">
+
+    <input type="text"
+           name="name"
+           placeholder="Community Name"
+           class="form-control">
+
+    <br>
+
+    <input type="text"
+           name="category"
+           placeholder="Category"
+           class="form-control">
+
+    <br>
+
+    <textarea name="description"
+              class="form-control"
+              placeholder="Description">
+    </textarea>
+
+    <div class="mb-3">
+
+    <label>Community Logo</label>
+
+    <input type="file"
+           name="logo"
+           class="form-control">
+
+</div>
+
+    <br>
+
+    <button class="btn btn-success">
+
+        Create
+
+    </button>
+
+</form>
+
+{% endblock %}

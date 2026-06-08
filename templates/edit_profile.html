@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Edit Profile</h1>
+
+    <form method="POST"
+          enctype="multipart/form-data">
+
+        <input type="text"
+               name="phone"
+               value="{{ user.phone or '' }}"
+               class="form-control mb-3"
+               placeholder="Phone Number">
+
+        <textarea
+                name="bio"
+                class="form-control mb-3"
+                placeholder="About Me">{{ user.bio or '' }}</textarea>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Profile Photo
+            </label>
+
+            <input type="file"
+                   name="profile_pic"
+                   class="form-control">
+
+        </div>
+
+        <button class="btn btn-success">
+
+            Save Changes
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

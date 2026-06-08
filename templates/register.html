@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Student Registration</h1>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text"
+                   name="name"
+                   class="form-control"
+                   placeholder="Enter Full Name"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Register Number</label>
+            <input type="text"
+                   name="reg_no"
+                   class="form-control"
+                   placeholder="e.g. CEP23CSE045"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Department</label>
+            <select name="department" class="form-control" required>
+                <option value="">Select Department</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>ME</option>
+                <option>CE</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Semester</label>
+            <select name="semester" class="form-control" required>
+                <option value="">Select Semester</option>
+                <option>S1</option>
+                <option>S2</option>
+                <option>S3</option>
+                <option>S4</option>
+                <option>S5</option>
+                <option>S6</option>
+                <option>S7</option>
+                <option>S8</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">College Email</label>
+            <input type="email"
+                   name="email"
+                   class="form-control"
+                   placeholder="Enter Email"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Enter Password"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Confirm Password</label>
+            <input type="password"
+                   name="confirm_password"
+                   class="form-control"
+                   placeholder="Confirm Password"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Register
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

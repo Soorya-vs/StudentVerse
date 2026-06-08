@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="profile-card">
+
+        <div class="text-center">
+
+            {% if user.profile_pic %}
+
+            <img src="{{ url_for('static',
+            filename='uploads/profiles/' + user.profile_pic) }}"
+                 class="profile-pic">
+
+            {% else %}
+
+            <img src="{{ url_for('static',
+            filename='images/default_profile.png') }}"
+                 class="profile-pic">
+
+            {% endif %}
+
+            <h1 class="profile-name">
+                {{ user.name }}
+            </h1>
+
+            <p class="profile-role">
+                {{ user.department }} • Semester {{ user.semester }}
+            </p>
+
+        </div>
+
+        <div class="profile-details">
+
+            <div class="detail-item">
+                <strong>Register No</strong>
+                <span>{{ user.reg_no }}</span>
+            </div>
+
+            <div class="detail-item">
+                <strong>Email</strong>
+                <span>{{ user.email }}</span>
+            </div>
+
+            <div class="detail-item">
+                <strong>Phone</strong>
+                <span>{{ user.phone or "Not Added" }}</span>
+            </div>
+
+            <div class="detail-item">
+                <strong>Status</strong>
+                <span>{{ user.status }}</span>
+            </div>
+
+            <div class="detail-item">
+                <strong>Role</strong>
+                <span>{{ user.role }}</span>
+            </div>
+
+            <div class="detail-item">
+                <strong>Bio</strong>
+                <span>{{ user.bio or "Not Added" }}</span>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+
+            <a href="/edit-profile"
+               class="btn btn-warning profile-btn">
+
+                ✏ Edit Profile
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
